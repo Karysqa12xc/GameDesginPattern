@@ -18,18 +18,6 @@ namespace Chapter.State
                 transform.Translate(_turnDirection * _bikeController.turnDistance);
             }
         }
-
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
     }
 }
 

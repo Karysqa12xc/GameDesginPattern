@@ -9,7 +9,6 @@ namespace Chapter.Singleton
     {
         private DateTime _sessionStartTime;
         private DateTime _sessionEndTime;
-
         // Start is called before the first frame update
         void Start()
         {
@@ -37,5 +36,6 @@ namespace Chapter.Singleton
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
+        
     }
 }
