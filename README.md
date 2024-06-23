@@ -25,3 +25,12 @@
 * Nhược điểm:
     - Hiệu suất(Performance): Dưới bất kỳ một Event system nào cũng tồn tại một cơ chế quan lý cấp thấp quản lý việc gửi tin giữa các đối tượng trong hệ thông. Do đó, có thể sẽ phát sinh ra một chút chi phí hiệu suất khi sử dụng Event Bus. Nhưng tuỳ thuộc vào mục đích sử dụng chi phí này có thể rất nhỏ
     - Tính toàn cầu(Global): Gây khó khăn trong việc gỡ lỗi và kiểm thử đơn vị.
+# Command Pattern(make replay system)
+* Ý tưởng: Trong một trò chơi khi thực hiện hành động cho một nhân vật nhảy lên thì nếu người chơi muốn lặp lại động tác đó mà không cần thực hiện lại thao tác chỉ mà máy tính sẽ thực hiện lại hành động nhảy của nhân vật được ghi lại từ thao tác trước đó của người chơi. Để làm được điều đó ta sử dụng Command Pattern để tách đối tượng gọi thao tác và đối tượng thực hiên thao tác.
+* Sơ đồ minh hoạ Command Pattern: ![Command Pattern](Assets/images/CommandPattern.png)
+* Dựa vào sơ đồ mình hoạ ta có được sơ đồ mình hoạ của hệ thông replay system: ![Replay System](Assets/images/ReplaySystemByCommandPattern.png)
+* Ưu điểm: 
+    * Tách rời(Decoupling): Mẫu cho phép tác đối tượng gọi khỏi đối tượng thực thi lệnh. Lớp phân tách này cho phép bổ sung một trung gian có khả năng lưu lại các hoạt động và thực hiện chúng theo trình tự.
+    * Tính trình tự(Sequencing): Tạo điều kiện thuận lợi cho quá trình sắp xếp đầu vào của người dùng, cho phép thực hiện các tính năng hoàn tác/làm lại, marco và hàng đợi lệnh.
+* Nhược điểm:
+    * Độ phức tạp(Complexity): Để triển khai mẫu này cần có nhiều lớp để thực hiện. Và các lớp được xây dựng liên kết với nhau khá phức tạp.

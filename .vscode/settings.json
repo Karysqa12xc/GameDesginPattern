@@ -51,5 +51,8 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "GameDevPatterns.sln"
+    "dotnet.defaultSolution": "GameDevPatterns.sln",
+    "cSpell.words": [
+        "Mathf"
+    ]
 }
