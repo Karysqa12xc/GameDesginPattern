@@ -34,3 +34,12 @@
     * Tính trình tự(Sequencing): Tạo điều kiện thuận lợi cho quá trình sắp xếp đầu vào của người dùng, cho phép thực hiện các tính năng hoàn tác/làm lại, marco và hàng đợi lệnh.
 * Nhược điểm:
     * Độ phức tạp(Complexity): Để triển khai mẫu này cần có nhiều lớp để thực hiện. Và các lớp được xây dựng liên kết với nhau khá phức tạp.
+# Object Pooling Pattern
+* Ý tưởng: Tạo một nhóm các đối tượng đã được lưu trữ sẵn ở trong một vùng nhớ cố định. Người dùng có thể gọi nhóm đối tượng này khi cần đến và chúng sẽ được tạo mới nếu chưa tồn tại bên trong bộ nhớ nếu đã có thì chúng sẽ được gọi ra, khi đã được sử dụng xong thì chúng sẽ quay lại hàng đợi và bị ẩn đi để chờ đợi lần gọi ra tiếp theo. Nếu như số lượng các đối tượng vượt quá các kích cỡ của vùng nhớ thì chương trình sẽ giải phóng các đối tượng thừa.
+* Hình ảnh minh hoạ mẫu Object Pooling: ![Object Pooling Pattern](Assets/images/ObjectPool.png)
+* Ưu điểm: 
+    * Mức sử dụng bộ nhớ có thể dự đoán được: Chúng ta có thể phân bổ theo cách có thể dự đoạn được một số nội dung được lưu trong bộ nhớ cụ thể.
+    * Tăng hiệu xuất: Bằng cách khởi tạo đối tượng đã được lưu sẵn trong bộ nhớ, ta tránh được chi phí phải trả khi khởi tạo các đối tượng mới.
+* Nhược điểm: 
+    * Phân lớp trên bộ nhớ đã được quản lý bởi ngôn ngữ C#: Với ngôn ngữ hiện đại như C# thì nhiều người cho rằng mẫu này không thực sự cần thiết. Điều này có thể đúng ở một số bối cảnh những cũng có thể sai ở một số bối cảnh khác.
+    * Các trạng thái của đối tượng có thể không đoán trước được: Nếu mẫu này được sử dụng không chính xác thì các đối tượng khi được đưa trở lại hàng đợi khi đang ở trạng thái hiện tại mà không phải trạng thái ban đầu. Ví dụ: Khi môt enemy bị tiêu diệt và quay trở lại hàng đợi để chờ cho lần sử dụng tiếp theo nhưng máu của enemy vẫn giữ ở mức bị tiêu diệt.
