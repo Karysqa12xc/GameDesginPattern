@@ -43,3 +43,12 @@
 * Nhược điểm: 
     * Phân lớp trên bộ nhớ đã được quản lý bởi ngôn ngữ C#: Với ngôn ngữ hiện đại như C# thì nhiều người cho rằng mẫu này không thực sự cần thiết. Điều này có thể đúng ở một số bối cảnh những cũng có thể sai ở một số bối cảnh khác.
     * Các trạng thái của đối tượng có thể không đoán trước được: Nếu mẫu này được sử dụng không chính xác thì các đối tượng khi được đưa trở lại hàng đợi khi đang ở trạng thái hiện tại mà không phải trạng thái ban đầu. Ví dụ: Khi môt enemy bị tiêu diệt và quay trở lại hàng đợi để chờ cho lần sử dụng tiếp theo nhưng máu của enemy vẫn giữ ở mức bị tiêu diệt.
+# Observer Pattern
+* Ý tưởng: Dùng để tạo ra mối quan hệ một nhiều giữa thành phần chủ thể và người theo dõi chủ thể. Khi có gì thay đổi bên trong chủ thể thì nó sẽ thông báo đến cho những lớp đang theo dõi chủ thể đó. Mẫu này gần giống với Event Bus những điều khác biết là các đối tượng trong Observer Pattern có thể nhận diện ra nhau.
+* Sơ đồ minh hoạ Observer Pattern: ![Observer Pattern](Assets/images/ObseverPattern.png)
+* Ưu điểm: 
+    * Tính linh động(Dynamism): Các đối tượng chủ thể có thể cho thêm bao nhiều người quan sát tuỳ ý muốn.
+    * Thể hiện được mối quan hệ một nhiều: Mẫu này cho phép thể hiện được rõ ràng các quan hệ một nhiều giữa các đối tượng bên trong hệ thống.
+* Nhược điểm:
+    * Lộn xộn(Disorder): Mẫu này không đảm bảo thức tự người quan sát nhận được thông báo. Vì vậy nếu trong hệ thống có hai đối tượng cùng liên kết đến mốt thành phần bên trong chủ thể và phải thực hiện tuần tự thì nguyên bản của mẫu này không đáp ứng được.
+    * Rò rỉ thông tin(Leaking): Có thể dẫn đến rò rỉ bộ nhớ nếu chủ thể giữ các liên kết mạnh đến người quan sát. Nếu nó được triển khai không chính xác và các đối tượng không được tách rời và xử lý đúng cách thì điều này có thể gây cản trở trong qua trình dọn dẹp bộ nhớ và không được giải phóng.
