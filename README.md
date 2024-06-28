@@ -52,3 +52,12 @@
 * Nhược điểm:
     * Lộn xộn(Disorder): Mẫu này không đảm bảo thức tự người quan sát nhận được thông báo. Vì vậy nếu trong hệ thống có hai đối tượng cùng liên kết đến mốt thành phần bên trong chủ thể và phải thực hiện tuần tự thì nguyên bản của mẫu này không đáp ứng được.
     * Rò rỉ thông tin(Leaking): Có thể dẫn đến rò rỉ bộ nhớ nếu chủ thể giữ các liên kết mạnh đến người quan sát. Nếu nó được triển khai không chính xác và các đối tượng không được tách rời và xử lý đúng cách thì điều này có thể gây cản trở trong qua trình dọn dẹp bộ nhớ và không được giải phóng.
+# Visitor Pattern
+* Ý tưởng: Một đối tượng có thể cho khách phép truy cập các thành phần cụ thể của nó thông qua các lớp dùng để nhận diện hành vi truy cập đó.
+* Sơ đồ minh hoạ cho Visitor Pattern: ![Visitor Pattern](Assets/images/VisitorPattern.png)
+* Ưu điểm: 
+    * Tính mở/đóng(Open/Close): Sử dụng mẫu này giúp ta tuân thủ được nguyên tắc O(Open/Close) trong SOLID trong đó mô tả các đối tượng có thể mở rộng thì sẽ mở còn những đối tượng không cần mở rộng thì có thể dễ dàng sửa đổi.
+    * Trách nhiệm duy nhất(Single Responsible): Mẫu này cũng tuân thủ theo nguyên tắc S trong SOLID trong đó mẫu này mô tả việc các Visitor và các Visitable có thể đưa ra các hành vi cụ thể độc quyền của nó
+* Nhược điểm: 
+    * Khả năng truy cập(Accessibility): Việc xây dựng mẫu này có thể thiếu các quyền truy cập vào các quyền riêng tư cụ thể.
+    * Độ phức tạp(Complexity): Mẫu này là một mẫu phức tạp vì khi xây dựng ta sẽ cần tách ra thành nhiều class để xây dựng mỗi class sẽ đảm nhiệm một chức năng riêng biệt điều này có thể khiến cho những lập trình viên chưa quen với mẫu này khó đọc mã
