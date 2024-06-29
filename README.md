@@ -61,3 +61,12 @@
 * Nhược điểm: 
     * Khả năng truy cập(Accessibility): Việc xây dựng mẫu này có thể thiếu các quyền truy cập vào các quyền riêng tư cụ thể.
     * Độ phức tạp(Complexity): Mẫu này là một mẫu phức tạp vì khi xây dựng ta sẽ cần tách ra thành nhiều class để xây dựng mỗi class sẽ đảm nhiệm một chức năng riêng biệt điều này có thể khiến cho những lập trình viên chưa quen với mẫu này khó đọc mã
+# Strategy pattern
+* Ý tưởng: Mục tiêu chính là trì hoãn quyết định sử dụng hành vi nào trong quá trình chạy. Mẫu này giúp làm được điều đó vì nó gói gọn các hành vi vào các lớp riêng lẻ. Mỗi đối tượng có thể hoán đổi cho nhau hoặc gán cho một đối tượng cụ thể để thay đổi hành vi của nó.
+* Sơ đồ minh hoạ mẫu Strategy pattern: ![Strategy Pattern](Assets/images/StrategyPattern.png)
+* Ưu điểm: 
+    * Tính đóng gói(Encapsulation): Lợi ích của mẫu này là nó thực thi các biến thể của thuật toán trong các lớp riêng lẻ. Do đó, điều này giúp ta tránh sử dụng các câu lệnh điều kiện dài trong khi vẫn giữ cấu trúc mã của mình.
+    * Thay đổi trong quá trình runtime: Mẫu này cho phép trai đổi các thuật toán mà một đói tượng đang sử dụng trong runtime. Cách tiếp cận này giúp cho các đối tượng trở nên năng động hơn và có tính mở rộng hơn.
+* Nhược điểm:
+    * Client: Lớp Client phải nhận thức được các strategy riêng lẻ và các biến thể trong thuật toán mà chúng triển khai để biết nên chọn strategy nào.
+    * Nhầm lẫn(Confusion): Vì các Strategy Pattern và State Pattern khá giống nhau nên trong quá trình sử dụng có thể dẫn đến sự nhầm lẫn.
