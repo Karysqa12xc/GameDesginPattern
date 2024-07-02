@@ -70,3 +70,12 @@
 * Nhược điểm:
     * Client: Lớp Client phải nhận thức được các strategy riêng lẻ và các biến thể trong thuật toán mà chúng triển khai để biết nên chọn strategy nào.
     * Nhầm lẫn(Confusion): Vì các Strategy Pattern và State Pattern khá giống nhau nên trong quá trình sử dụng có thể dẫn đến sự nhầm lẫn.
+# Decorator Pattern
+* Ý tưởng: Là mẫu cho phép bổ sung các chức năng mới vào một đối tượng hiện có mà không làm thay đổi nó. Điều này được thực hiện bằng cách tạo một lớp decorator bao bọc lớp an đầu.
+* Sơ đồ mô tả Decorator Pattern: ![Decorator Pattern](Assets/images/DecoratorPattern.png)
+* Ưu điểm: 
+    * Cho phép thay thế kiểu thiết kế phân lớp(subclassing): Kế thừa là một quá trình tĩnh. Không giống như Decorator Patter, nó không cho phép mở rộng hành vi của đối tượng hiện có trong thời gian chạy. Bạn chỉ có thể thay thể một thể hiện bằng một thể hiện khác có cùng lớp với lớp cha có hành vi mà lớp nó mong muốn.
+    * Thời gian chạy động(Runtime dynamics): Decorator Pattern cho phép chúng ta thêm chức năng vào một đối tượng trong thời gian chạy bằng cách gắn các trình trang trí của nó. 
+* Nhược điểm: 
+    * Độ phức tạp của các mối quan hệ(Relationship complexity): Việc theo dõi chuỗi khởi tạo và mối quan hệ giữa các decorators có thể trở nên rất phức tạp nếu có nhiều lớp decorators xung quanh một object.
+    * Độ phức tạp của mã(Code complexity): Tuỳ thuộc vào cách triển khai mẫu, nó có thể tăng thêm độ phức tạo cho cơ sở mã vì có thể ta sẽ phải duy trì một số lượng lớp decorators nhỏ.
